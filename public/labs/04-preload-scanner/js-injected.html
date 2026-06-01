@@ -1,0 +1,40 @@
+<!doctype html>
+  <html lang="uk">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Preload Scanner - js-injected</title>
+      
+            <link rel="stylesheet" href="/assets/css/lab.css">
+            <script src="/assets/js/inject-hero.js?delay=1500" defer></script>
+          
+      <script src="/metrics-helper.js?v=4" defer></script>
+    </head>
+    <body>
+      <a class="back-link" href="/">Dashboard</a>
+      <main class="lab-page" data-variant="js-injected">
+        <section class="variant-strip">
+          <span>Preload Scanner</span>
+          <strong>js-injected</strong>
+        </section>
+        
+    <section class="hero" id="client-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">04 Scanner</p>
+        <h1>Hero image буде створений JavaScript</h1>
+        <p>Перевір, коли в Network з'явиться request для hero image.</p>
+        <button type="button" data-action="mark-interaction">Mark interaction</button>
+      </div>
+      <div class="hero-placeholder" id="hero-slot">Waiting for JavaScript...</div>
+    </section>
+    
+    <section class="content-band">
+      <h2>Below the fold content</h2>
+      <p>Цей блок потрібен, щоб сторінка мала реальний viewport boundary і ресурси above-the-fold було легше порівнювати.</p>
+    </section>
+  
+  
+      </main>
+      
+    </body>
+  </html>

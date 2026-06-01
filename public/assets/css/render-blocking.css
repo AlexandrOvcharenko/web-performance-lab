@@ -1,0 +1,11 @@
+.hero-copy h1 {
+  text-decoration: underline;
+  text-decoration-color: #9a3412;
+  text-decoration-thickness: 4px;
+}
+
+.variant-strip::after {
+  content: "render-blocking css loaded";
+  color: #9a3412;
+  font-weight: 800;
+}

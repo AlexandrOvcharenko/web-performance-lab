@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Resource loading hero</title>
+  <desc id="desc">Abstract browser waterfall visualization.</desc>
+  <rect width="960" height="640" fill="#dbeafe"/>
+  <rect x="72" y="76" width="816" height="488" fill="#ffffff" stroke="#172033" stroke-width="4"/>
+  <rect x="72" y="76" width="816" height="72" fill="#172033"/>
+  <circle cx="118" cy="112" r="12" fill="#ef4444"/>
+  <circle cx="156" cy="112" r="12" fill="#f59e0b"/>
+  <circle cx="194" cy="112" r="12" fill="#22c55e"/>
+  <g fill="none" stroke-linecap="round" stroke-width="24">
+    <path d="M142 220H584" stroke="#216869"/>
+    <path d="M142 288H704" stroke="#9a3412"/>
+    <path d="M142 356H498" stroke="#2563eb"/>
+    <path d="M142 424H764" stroke="#7c3aed"/>
+  </g>
+  <g fill="#172033" font-family="Arial, sans-serif" font-size="34" font-weight="700">
+    <text x="142" y="510">LCP resource</text>
+  </g>
+</svg>

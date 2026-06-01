@@ -1,0 +1,15 @@
+{
+  "name": "resource-loading-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Навчальний lab-стенд для дослідження loading performance ресурсів у web.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "express": "^4.19.2"
+  }
+}

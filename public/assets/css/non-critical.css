@@ -1,0 +1,10 @@
+.content-band {
+  background: #eef6f2;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.content-band h2::after {
+  content: " - non-critical CSS loaded";
+  color: #216869;
+}

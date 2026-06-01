@@ -1,0 +1,8 @@
+@import url("/assets/css/lab.css");
+@import url("/assets/css/import-layer-a.css?delay=1600");
+@import url("/assets/css/import-layer-b.css?delay=1600");
+
+.variant-strip::after {
+  content: "@import entry loaded";
+  color: #9a3412;
+}

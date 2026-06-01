@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Cross origin resource</title>
+  <desc id="desc">Abstract cross-origin asset loading visualization.</desc>
+  <rect width="960" height="640" fill="#ecfccb"/>
+  <circle cx="286" cy="320" r="168" fill="#216869" opacity="0.9"/>
+  <circle cx="674" cy="320" r="168" fill="#9a3412" opacity="0.86"/>
+  <path d="M370 320H590" stroke="#172033" stroke-width="30" stroke-linecap="round"/>
+  <path d="M548 274l58 46-58 46" fill="none" stroke="#172033" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="182" y="536" fill="#172033" font-family="Arial, sans-serif" font-size="34" font-weight="700">cross-origin asset</text>
+</svg>

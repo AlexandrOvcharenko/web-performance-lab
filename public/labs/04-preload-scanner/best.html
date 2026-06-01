@@ -1,0 +1,40 @@
+<!doctype html>
+  <html lang="uk">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Preload Scanner - best</title>
+      
+            <link rel="preload" href="/assets/images/hero.png?delay=1200" as="image" fetchpriority="high">
+            <link rel="stylesheet" href="/assets/css/lab.css">
+            <link rel="stylesheet" href="/assets/css/background-hero.css?delay=1800">
+          
+      <script src="/metrics-helper.js?v=4" defer></script>
+    </head>
+    <body>
+      <a class="back-link" href="/">Dashboard</a>
+      <main class="lab-page" data-variant="best">
+        <section class="variant-strip">
+          <span>Preload Scanner</span>
+          <strong>best</strong>
+        </section>
+        
+    <section class="hero hero-background">
+      <div class="hero-copy">
+        <p class="eyebrow">04 Scanner</p>
+        <h1>Late-discovered image отримав preload</h1>
+        <p>Цей hero використовує CSS background-image замість HTML img.</p>
+        <button type="button" data-action="mark-interaction">Mark interaction</button>
+      </div>
+    </section>
+    
+    <section class="content-band">
+      <h2>Below the fold content</h2>
+      <p>Цей блок потрібен, щоб сторінка мала реальний viewport boundary і ресурси above-the-fold було легше порівнювати.</p>
+    </section>
+  
+  
+      </main>
+      
+    </body>
+  </html>

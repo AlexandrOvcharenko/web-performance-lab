@@ -1,0 +1,50 @@
+<!doctype html>
+  <html lang="uk">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Over Optimization - missing-crossorigin</title>
+      
+            <link rel="preload" href="http://localhost:3001/assets/fonts/lab-font.woff2?delay=1200" as="font">
+            <link rel="stylesheet" href="/assets/css/lab.css">
+            
+    <style>
+      @font-face {
+        font-family: "LabInter";
+        src: url("http://localhost:3001/assets/fonts/lab-font.woff2?delay=1200") format("woff2");
+        font-display: swap;
+      }
+      .hero-copy h1 { font-family: "LabInter", Inter, system-ui, sans-serif; }
+    </style>
+  
+          
+      <script src="/metrics-helper.js?v=4" defer></script>
+    </head>
+    <body>
+      <a class="back-link" href="/">Dashboard</a>
+      <main class="lab-page" data-variant="missing-crossorigin">
+        <section class="variant-strip">
+          <span>Over Optimization</span>
+          <strong>missing-crossorigin</strong>
+        </section>
+        
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">08 Mistakes</p>
+        <h1>Font preload має збігатися з CORS request</h1>
+        <p>Відкрий DevTools Network і порівняй request start, priority, initiator та waterfall.</p>
+        <button type="button" data-action="mark-interaction">Mark interaction</button>
+      </div>
+      <img class="hero-image" src="/assets/images/hero.png?delay=1200" alt="Abstract resource loading visualization" width="960" height="640" >
+    </section>
+    
+    <section class="content-band">
+      <h2>Below the fold content</h2>
+      <p>Цей блок потрібен, щоб сторінка мала реальний viewport boundary і ресурси above-the-fold було легше порівнювати.</p>
+    </section>
+  
+  
+      </main>
+      
+    </body>
+  </html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baseline - preload LCP image</title>
+    <link rel="stylesheet" href="/assets/css/baseline-layout.css">
+    <!-- This is the only difference from control.html:
+      preload makes the hidden CSS background image discoverable before the
+      delayed stylesheet is downloaded and parsed. -->
+    <link rel="preload" href="/assets/images/hero.png?delay=1200" as="image" fetchpriority="high">
+
+    <link rel="stylesheet" href="/assets/css/baseline-late-hero.css?delay=1400">
+  </head>
+  <body>
+    <main>
+      <section class="variant-strip">
+        <span>Baseline</span>
+        <strong>preload LCP image</strong>
+      </section>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">01 Baseline</p>
+          <h1>Раніше знайдений LCP ресурс</h1>
+          <p>Той самий CSS background, але hero.png оголошений через preload у head.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const prefix = "[01-baseline]";
+
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          console.log(`${prefix} ${entry.name}: ${entry.startTime.toFixed(0)}ms`);
+        }
+      }).observe({ type: "paint", buffered: true });
+
+      new PerformanceObserver((entryList) => {
+        const entry = entryList.getEntries().at(-1);
+        const element = entry.element
+          ? `${entry.element.tagName.toLowerCase()}${entry.element.className ? `.${entry.element.className}` : ""}`
+          : "unknown";
+        const url = entry.url || "text";
+
+        console.log(`${prefix} LCP candidate: ${entry.startTime.toFixed(0)}ms ${element} ${url}`);
+      }).observe({ type: "largest-contentful-paint", buffered: true });
+    </script>
+  </body>
+</html>
