@@ -1,6 +1,5 @@
-.hero,
-.hero-background {
+.lcp-image-block {
   background-image:
-    linear-gradient(90deg, rgb(247 248 251 / 92%), rgb(247 248 251 / 42%)),
+    linear-gradient(90deg, rgb(247 248 251 / 18%), rgb(247 248 251 / 8%)),
     url("/assets/images/hero.png?delay=1200");
 }
