@@ -4,5 +4,5 @@
 
 .variant-strip::after {
   content: "@import entry loaded";
-  color: #9a3412;
+  color: #fb923c;
 }

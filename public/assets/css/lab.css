@@ -5,15 +5,17 @@
 }
 
 :root {
-  color-scheme: light;
-  --ink: #172033;
-  --muted: #526070;
-  --line: #cfd7e6;
-  --paper: #ffffff;
-  --bg: #f7f8fb;
-  --accent: #216869;
-  --accent-2: #9a3412;
-  --soft: #e9eef7;
+  color-scheme: dark;
+  --ink: #e6edf7;
+  --muted: #9aa7b6;
+  --line: #263548;
+  --paper: #121a26;
+  --bg: #090f18;
+  --accent: #5eead4;
+  --accent-2: #fb923c;
+  --soft: #182335;
+  --button: #dbeafe;
+  --button-ink: #07111f;
 }
 
 * {
@@ -127,6 +129,12 @@ a {
   text-decoration: none;
 }
 
+.variant-list a:hover,
+.toolbar a:hover,
+.back-link:hover {
+  border-color: var(--accent);
+}
+
 .variant-list span {
   font-weight: 800;
 }
@@ -188,6 +196,7 @@ a {
 .hero-image {
   height: auto;
   display: block;
+  filter: brightness(0.86) contrast(1.08);
 }
 
 .hero-placeholder {
@@ -210,8 +219,8 @@ button {
   width: fit-content;
   min-height: 40px;
   border: 0;
-  background: var(--ink);
-  color: white;
+  background: var(--button);
+  color: var(--button-ink);
   padding: 0 14px;
   font: inherit;
   font-weight: 700;

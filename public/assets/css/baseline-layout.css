@@ -4,8 +4,8 @@
 
 body {
   margin: 0;
-  color: #172033;
-  background: #f7f8fb;
+  color: #e6edf7;
+  background: #090f18;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -18,11 +18,11 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
-  color: #526070;
+  color: #9aa7b6;
 }
 
 .variant-strip strong {
-  color: #9a3412;
+  color: #fb923c;
 }
 
 .back-link {
@@ -33,11 +33,15 @@ main {
   display: inline-flex;
   min-height: 36px;
   align-items: center;
-  border: 1px solid #cfd7e6;
-  background: #ffffff;
+  border: 1px solid #263548;
+  background: #121a26;
   padding: 0 12px;
-  color: #172033;
+  color: #e6edf7;
   text-decoration: none;
+}
+
+.back-link:hover {
+  border-color: #5eead4;
 }
 
 .hero {
@@ -54,15 +58,15 @@ main {
 
 .lcp-image-block {
   min-height: 420px;
-  border: 1px solid #cfd7e6;
-  background-color: #dcebff;
+  border: 1px solid #263548;
+  background-color: #182335;
   background-position: center;
   background-size: cover;
 }
 
 .eyebrow {
   margin: 0 0 16px;
-  color: #216869;
+  color: #5eead4;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
@@ -79,7 +83,7 @@ h1 {
 
 p {
   max-width: 560px;
-  color: #526070;
+  color: #9aa7b6;
   line-height: 1.6;
 }
 
