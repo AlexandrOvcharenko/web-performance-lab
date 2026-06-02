@@ -1,55 +1,111 @@
 <!doctype html>
-  <html lang="uk">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>CSS Loading - best</title>
-      
-            <style>
-              
-    body { margin: 0; font-family: Inter, system-ui, sans-serif; color: #e6edf7; background: #090f18; }
-    .back-link { position: fixed; top: 16px; left: 16px; z-index: 10; color: #e6edf7; background: #121a26; padding: 8px 10px; border: 1px solid #263548; text-decoration: none; }
-    .lab-page { width: min(1120px, calc(100% - 32px)); margin: 64px auto; }
-    .variant-strip { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px; color: #9aa7b6; }
-    .hero { min-height: 68vh; display: grid; grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr); gap: 28px; align-items: center; }
-    .hero-copy h1 { font-size: 48px; line-height: 1.05; margin: 0 0 16px; }
-    .hero-image { width: 100%; height: auto; border: 1px solid #263548; background: #182335; filter: brightness(0.86) contrast(1.08); }
-    .eyebrow { text-transform: uppercase; letter-spacing: 0; color: #5eead4; font-weight: 700; }
-    button { min-height: 40px; border: 0; background: #dbeafe; color: #07111f; padding: 0 14px; }
-    @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .hero-copy h1 { font-size: 34px; } }
-  
-            </style>
-          
-      <script src="/metrics-helper.js?v=4" defer></script>
-    </head>
-    <body>
-      <a class="back-link" href="/">Dashboard</a>
-      <main class="lab-page" data-variant="best">
-        <section class="variant-strip">
-          <span>CSS Loading</span>
-          <strong>best</strong>
-        </section>
-        
-            
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">03 CSS</p>
-        <h1>Critical CSS приходить разом із HTML</h1>
-        <p>У Performance перевір, що перший екран може малюватися без очікування external critical CSS, а non-critical.css стартує пізніше.</p>
-        <button type="button" data-action="mark-interaction">Mark interaction</button>
-      </div>
-      <img class="hero-image" src="/assets/images/hero.png?delay=1200" alt="Abstract resource loading visualization" width="960" height="640" >
-    </section>
-    
-    <section class="content-band">
-      <h2>Below the fold content</h2>
-      <p>Цей блок потрібен, щоб сторінка мала реальний viewport boundary і ресурси above-the-fold було легше порівнювати.</p>
-    </section>
-  
-  
-            <link rel="stylesheet" href="/assets/css/non-critical.css?delay=2200">
-          
-      </main>
-      
-    </body>
-  </html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Loading - best</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        color: #e6edf7;
+        background: #090f18;
+      }
+      .back-link {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
+        color: #e6edf7;
+        background: #121a26;
+        padding: 8px 10px;
+        border: 1px solid #263548;
+        text-decoration: none;
+      }
+      .lab-page {
+        width: min(1120px, calc(100% - 32px));
+        margin: 64px auto;
+      }
+      .variant-strip {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+        color: #9aa7b6;
+      }
+      .hero {
+        min-height: 68vh;
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+        gap: 28px;
+        align-items: center;
+      }
+      .hero-copy h1 {
+        font-size: 48px;
+        line-height: 1.05;
+        margin: 0 0 16px;
+      }
+      .hero-image {
+        width: 100%;
+        height: auto;
+        border: 1px solid #263548;
+        background: #182335;
+        filter: brightness(0.86) contrast(1.08);
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0;
+        color: #5eead4;
+        font-weight: 700;
+      }
+      button {
+        min-height: 40px;
+        border: 0;
+        background: #dbeafe;
+        color: #07111f;
+        padding: 0 14px;
+      }
+      @media (max-width: 760px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-copy h1 {
+          font-size: 34px;
+        }
+      }
+    </style>
+
+    <script src="/metrics-helper.js?v=4" defer></script>
+  </head>
+  <body>
+    <a class="back-link" href="/">Dashboard</a>
+    <main class="lab-page" data-variant="best">
+      <section class="variant-strip">
+        <span>CSS Loading</span>
+        <strong>best</strong>
+      </section>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">03 CSS</p>
+          <h1>Critical CSS приходить разом із HTML</h1>
+          <p>
+            У Performance перевір, що перший екран може малюватися без
+            очікування external critical CSS, а non-critical.css стартує
+            пізніше.
+          </p>
+        </div>
+        <img
+          class="hero-image"
+          src="/assets/images/hero.png?delay=1200"
+          alt="Abstract resource loading visualization"
+          width="960"
+          height="640"
+        />
+      </section>
+
+      <link rel="stylesheet" href="/assets/css/non-critical.css?delay=2200" />
+    </main>
+  </body>
+</html>
