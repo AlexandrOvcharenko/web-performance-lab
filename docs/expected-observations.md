@@ -38,9 +38,10 @@
 
 ## 06 Fetch Priority
 
-- `bad`: hero image і thumbnails конкурують без явного priority signal.
-- `better`: preload робить hero image early-discovered, але сам по собі не завжди достатньо описує relative priority.
-- `best`: hero image має отримати higher priority signal, thumbnails - lower priority signal.
+- Усі варіанти: thumbnails у HTML **перед** hero; CSS `order` показує hero зверху. LCP — hero image.
+- `bad`: Network order `thumb-1` → `thumb-2` → `thumb-3` → `hero.png`. Thumbs `Started at` ~40–50 ms; hero `Started at` ~100 ms+ (queuing ~75 ms). Priority Medium → High після layout, але занадто пізно.
+- `better`: `preload` у head — hero з Initiator `preload`, стартує до thumbs; `Started at` значно раніше за `bad`.
+- `best`: `preload` + `fetchpriority="high"` на hero, `fetchpriority="low"` на thumbs — найраніший старт hero, найменша конкуренція під час TTFB.
 
 ## 07 Client Rendering
 

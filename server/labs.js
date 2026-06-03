@@ -61,12 +61,12 @@ export const labModules = [
   {
     id: "06-fetch-priority",
     title: "Fetch Priority",
-    goal: "Показати, як fetchpriority впливає на LCP image і менш важливі thumbnails.",
-    focus: "Network Priority column і конкуренція image requests.",
+    goal: "Показати, як розмітка, preload і fetchpriority впливають на чергу LCP image.",
+    focus: "Network порядок discovery, Priority, Timing → Queuing/Started at.",
     variants: [
-      variant("06-fetch-priority", "bad", "bad: equal images", "Hero і thumbnails конкурують без явного priority signal."),
-      variant("06-fetch-priority", "better", "better: preload hero", "Hero image стартує раніше завдяки preload."),
-      variant("06-fetch-priority", "best", "best: fetchpriority", "Hero отримує high priority, thumbnails позначені low.")
+      variant("06-fetch-priority", "bad", "bad: hero останній у discovery", "Thumbs у HTML перед hero; hero стартує пізно (~100 ms+), Priority Medium→High занадто пізно."),
+      variant("06-fetch-priority", "better", "better: preload hero", "Preload у head — hero у Network перед thumbs, без очікування в черзі."),
+      variant("06-fetch-priority", "best", "best: preload + fetchpriority", "Hero High з head, thumbs Low — LCP не карається за пізню позицію в розмітці.")
     ]
   },
   {

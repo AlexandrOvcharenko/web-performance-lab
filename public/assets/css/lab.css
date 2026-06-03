@@ -232,6 +232,19 @@ button {
   border-top: 1px solid var(--line);
 }
 
+.gallery-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-layout .gallery-hero {
+  order: 1;
+}
+
+.gallery-layout .gallery-thumbs {
+  order: 2;
+}
+
 .thumb-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -18,19 +18,43 @@
           <strong>bad</strong>
         </section>
         
-    <section class="hero gallery-hero">
-      <div class="hero-copy">
-        <p class="eyebrow">06 Fetch Priority</p>
-        <h1>Hero image проти thumbnails</h1>
-        <p>У варіанті bad порівняй Priority і старт image requests.</p>
-      </div>
-      <img class="hero-image" src="/assets/images/hero.png?delay=1200" alt="Hero image" width="960" height="640" >
-    </section>
-    <section class="thumb-grid" aria-label="Thumbnail gallery">
-      <img src="/assets/images/thumb-1.svg?delay=1200" alt="Thumbnail 1" width="320" height="220" >
-      <img src="/assets/images/thumb-2.svg?delay=1200" alt="Thumbnail 2" width="320" height="220" >
-      <img src="/assets/images/thumb-3.svg?delay=1200" alt="Thumbnail 3" width="320" height="220" >
-    </section>
+    <div class="gallery-layout">
+      <section class="thumb-grid gallery-thumbs" aria-label="Thumbnail gallery">
+        <img src="/assets/images/thumb-1.svg?delay=7000" alt="Thumbnail 1" width="320" height="220" >
+        <img src="/assets/images/thumb-2.svg?delay=7000" alt="Thumbnail 2" width="320" height="220" >
+        <img src="/assets/images/thumb-3.svg?delay=7000" alt="Thumbnail 3" width="320" height="220" >
+      </section>
+      <section class="hero gallery-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">06 Fetch Priority · bad</p>
+          <h1>LCP image останній у черзі discovery</h1>
+          <p>
+            Thumbnails у HTML <strong>перед</strong> hero; CSS
+            <code>order</code> показує hero зверху. Візуально hero —
+            LCP, але preload scanner знаходить його <em>останнім</em>.
+          </p>
+          <ol>
+            <li>
+              Disable cache → Hard reload. У Network порядок:
+              <code>thumb-1</code> → <code>thumb-2</code> →
+              <code>thumb-3</code> → <code>hero.png</code>.
+            </li>
+            <li>
+              Timing thumbnails: <code>Started at</code> ~40–50&nbsp;ms.
+              Hero: <code>Queued at</code> ~31&nbsp;ms, але
+              <code>Started at</code> ~100&nbsp;ms+ — чекає, поки
+              попередні image requests займуть слоти.
+            </li>
+            <li>
+              Priority: спочатку Medium у всіх; після layout hero →
+              High — але запит уже пізно стартував і конкурує з
+              thumbs під час 7&nbsp;s TTFB.
+            </li>
+          </ol>
+        </div>
+        <img class="hero-image" src="/assets/images/hero.png?delay=7000" alt="Hero image" width="960" height="640" >
+      </section>
+    </div>
   
   
       </main>

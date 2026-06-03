@@ -6,7 +6,7 @@
       <title>Fetch Priority - better</title>
       
       
-          <link rel="preload" href="/assets/images/hero.png?delay=1200" as="image">
+          <link rel="preload" href="/assets/images/hero.png?delay=7000" as="image">
         
       <link rel="stylesheet" href="/assets/css/lab.css">
     
@@ -20,19 +20,42 @@
           <strong>better</strong>
         </section>
         
-    <section class="hero gallery-hero">
-      <div class="hero-copy">
-        <p class="eyebrow">06 Fetch Priority</p>
-        <h1>Hero image проти thumbnails</h1>
-        <p>У варіанті better порівняй Priority і старт image requests.</p>
-      </div>
-      <img class="hero-image" src="/assets/images/hero.png?delay=1200" alt="Hero image" width="960" height="640" >
-    </section>
-    <section class="thumb-grid" aria-label="Thumbnail gallery">
-      <img src="/assets/images/thumb-1.svg?delay=1200" alt="Thumbnail 1" width="320" height="220" >
-      <img src="/assets/images/thumb-2.svg?delay=1200" alt="Thumbnail 2" width="320" height="220" >
-      <img src="/assets/images/thumb-3.svg?delay=1200" alt="Thumbnail 3" width="320" height="220" >
-    </section>
+    <div class="gallery-layout">
+      <section class="thumb-grid gallery-thumbs" aria-label="Thumbnail gallery">
+        <img src="/assets/images/thumb-1.svg?delay=7000" alt="Thumbnail 1" width="320" height="220" >
+        <img src="/assets/images/thumb-2.svg?delay=7000" alt="Thumbnail 2" width="320" height="220" >
+        <img src="/assets/images/thumb-3.svg?delay=7000" alt="Thumbnail 3" width="320" height="220" >
+      </section>
+      <section class="hero gallery-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">06 Fetch Priority · preload hero</p>
+          <h1>Preload ламає «пізній» discovery hero</h1>
+          <p>
+            Та сама розмітка, що в <code>bad.html</code> (thumbs у HTML
+            перед hero), але <code>&lt;link rel="preload"&gt;</code> у
+            head знаходить hero <strong>до</strong> thumbnails.
+          </p>
+          <ol>
+            <li>
+              Порівняй з <code>bad.html</code> side-by-side: Hard reload
+              обидва. Hero має Initiator <code>preload</code> і
+              з'являється у Network <em>перед</em> thumbs.
+            </li>
+            <li>
+              Timing hero: <code>Started at</code> значно раніше, ніж
+              ~100&nbsp;ms у <code>bad</code> — немає очікування за
+              трьома thumbnails.
+            </li>
+            <li>
+              Thumbnails лишаються Medium без
+              <code>fetchpriority="low"</code> — після старту hero
+              вони все одно конкурують. Дивись <code>best.html</code>.
+            </li>
+          </ol>
+        </div>
+        <img class="hero-image" src="/assets/images/hero.png?delay=7000" alt="Hero image" width="960" height="640" >
+      </section>
+    </div>
   
   
       </main>

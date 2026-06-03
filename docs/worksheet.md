@@ -99,10 +99,10 @@
 
 Питання:
 
-- Який priority має hero image без `fetchpriority`?
-- Чи змінюється priority після `fetchpriority="high"`?
-- Чи thumbnails отримують нижчий priority у `best`?
-- Чи зменшується конкуренція з LCP image?
+- У якому порядку preload scanner знаходить image requests у `bad`?
+- Чому hero має `Started at` ~100 ms+, а thumbs ~40–50 ms?
+- Чи змінює `preload` порядок hero vs thumbs у Network?
+- Чи `fetchpriority="high"` / `"low"` зменшує конкуренцію під час TTFB?
 
 ## 07 Client Rendering
 
