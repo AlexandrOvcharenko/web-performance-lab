@@ -41,6 +41,7 @@ export const labModules = [
     variants: [
       variant("04-preload-scanner", "bad", "bad: CSS background LCP", "Hero image схований у CSS, preload scanner не читає CSS content."),
       variant("04-preload-scanner", "better", "better: HTML img", "Hero image присутній в initial HTML і може бути знайдений раніше."),
+      variant("04-preload-scanner", "body-stylesheet", "body stylesheet", "Stylesheet у body блокує render, але parser все ще знаходить image нижче."),
       variant("04-preload-scanner", "best", "best: preload CSS background", "Якщо CSS background неминучий, preload робить ресурс видимим раніше."),
       variant("04-preload-scanner", "js-injected", "bad: JS injected", "Startup script injects hero image, тому request стартує після виконання JS."),
       variant("04-preload-scanner", "lazy-above-fold", "bad: lazy LCP", "Above-the-fold LCP image не має бути lazy-loaded.")
