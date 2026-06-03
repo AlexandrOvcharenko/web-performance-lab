@@ -5,7 +5,6 @@ if (root) {
       <p class="eyebrow">07 CSR</p>
       <h1>Critical content створений на клієнті</h1>
       <p>Image request не може стартувати до виконання цього script.</p>
-      <button type="button" data-action="mark-interaction">Mark interaction</button>
     </div>
     <img class="hero-image" src="/assets/images/hero.png?delay=1200" alt="Client rendered hero image" width="960" height="640">
   `;

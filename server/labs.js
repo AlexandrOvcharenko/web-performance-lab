@@ -53,9 +53,9 @@ export const labModules = [
     goal: "Порівняти dns-prefetch, preconnect, preload і prefetch.",
     focus: "Connection setup, speculative work і late-discovered critical resources.",
     variants: [
-      variant("05-resource-hints", "bad", "bad: no hints", "Font і hero image з cross-origin asset server знаходяться пізно."),
-      variant("05-resource-hints", "better", "better: dns-prefetch", "DNS lookup можна підготувати дешевше за full preconnect."),
-      variant("05-resource-hints", "best", "best: preconnect + preload", "Preconnect готує origin, preload робить LCP image early-discovered.")
+      variant("05-resource-hints", "bad", "bad: no hints", "Той самий layout що best, без preconnect/preload — font CSS стартує лише після parser дійде до link."),
+      variant("05-resource-hints", "better", "better: dns-prefetch", "dns-prefetch у head — DNS Lookup на .woff2 коротший або відсутній порівняно з bad."),
+      variant("05-resource-hints", "best", "best: preconnect + preload", "Preconnect готує Google Fonts origin, preload стартує font CSS до пізнього link у body.")
     ]
   },
   {

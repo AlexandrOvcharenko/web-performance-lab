@@ -31,9 +31,9 @@
 
 ## 05 Resource Hints
 
-- `bad`: ресурси з `localhost:3001` стартують тільки коли browser дійде до font/image discovery.
-- `better`: `dns-prefetch` може зменшити DNS частину connection setup, хоча для localhost ефект може бути мінімальним.
-- `best`: `preconnect` має підготувати connection до `localhost:3001`, а `preload` має зробити LCP image early-discovered.
+- `bad`: font CSS inject-иться JS після blocking script; preload scanner його не знаходить — Google Fonts CSS відсутній, поки script pending.
+- `better`: `dns-prefetch` у `<head>` має відпрацювати до пізнього font link; на `.woff2` DNS Lookup має бути коротшим або відсутнім порівняно з `bad`.
+- `best`: той самий JS inject, але `preload` у head стартує CSS раніше (Initiator `preload`) — видно різницю з `bad` під час blocking script.
 - `prefetch`: future navigation document може з'явитися як low priority speculative request.
 
 ## 06 Fetch Priority

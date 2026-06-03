@@ -1,52 +1,85 @@
 <!doctype html>
-  <html lang="uk">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Resource Hints - best</title>
-      
-            <link rel="preconnect" href="http://localhost:3001" crossorigin>
-            <link rel="preload" href="http://localhost:3001/assets/images/hero-alt.png?delay=1200" as="image" fetchpriority="high">
-            <link rel="stylesheet" href="/assets/css/lab.css">
-            
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resource Hints - best</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      as="style"
+    />
+    <link rel="stylesheet" href="/assets/css/lab.css" />
+
     <style>
-      @font-face {
-        font-family: "LabInter";
-        src: url("http://localhost:3001/assets/fonts/lab-font.woff2?delay=1200") format("woff2");
-        font-display: swap;
+      .hero-copy h1 {
+        font-family: 'Inter', system-ui, sans-serif;
       }
-      .hero-copy h1 { font-family: "LabInter", Inter, system-ui, sans-serif; }
     </style>
-  
-            <link rel="prefetch" href="/lab/06-fetch-priority/best" as="document">
-          
-      <script src="/metrics-helper.js?v=4" defer></script>
-    </head>
-    <body>
-      <a class="back-link" href="/">Dashboard</a>
-      <main class="lab-page" data-variant="best">
-        <section class="variant-strip">
-          <span>Resource Hints</span>
-          <strong>best</strong>
-        </section>
-        
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">05 Hints</p>
-        <h1>Origin і LCP resource підготовлені раніше</h1>
-        <p>Відкрий DevTools Network і порівняй request start, priority, initiator та waterfall.</p>
-        <button type="button" data-action="mark-interaction">Mark interaction</button>
-      </div>
-      <img class="hero-image" src="http://localhost:3001/assets/images/hero-alt.png?delay=1200" alt="Abstract resource loading visualization" width="960" height="640" fetchpriority="high">
-    </section>
-    
-    <section class="content-band">
-      <h2>Below the fold content</h2>
-      <p>Цей блок потрібен, щоб сторінка мала реальний viewport boundary і ресурси above-the-fold було легше порівнювати.</p>
-    </section>
-  
-  
-      </main>
-      
-    </body>
-  </html>
+
+    <link rel="prefetch" href="/lab/06-fetch-priority/best" as="document" />
+
+    <script src="/metrics-helper.js?v=4" defer></script>
+  </head>
+  <body>
+    <a class="back-link" href="/">Dashboard</a>
+    <main class="lab-page" data-variant="best">
+      <section class="variant-strip">
+        <span>Resource Hints</span>
+        <strong>best</strong>
+      </section>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">05 Hints · preconnect + preload + prefetch</p>
+          <h1>Connection і CSS готові до JS inject</h1>
+          <p>
+            Той самий JS inject, що в <code>bad.html</code>, але
+            <code>preconnect</code> і <code>preload</code> у
+            <code>&lt;head&gt;</code> працюють одразу.
+          </p>
+          <ol>
+            <li>
+              Порівняй з <code>bad.html</code> side-by-side: Disable cache →
+              Hard reload обидва.
+            </li>
+            <li>
+              Поки <code>parser-blocking.js</code> pending — у Network має бути
+              Google Fonts CSS з Initiator <code>preload</code>. У
+              <code>bad</code> його немає.
+            </li>
+            <li>
+              Після script: JS inject apply-ить CSS; <code>.woff2</code> стартує
+              одразу. Timing → без DNS Lookup, коротший Initial connection
+              (завдяки <code>preconnect</code>).
+            </li>
+            <li>
+              В кінці списку знайди <code>/lab/06-fetch-priority/best</code> —
+              Initiator <code>prefetch</code>, Priority Lowest (майбутня
+              навігація).
+            </li>
+          </ol>
+        </div>
+        <img
+          class="hero-image"
+          src="http://localhost:3001/assets/images/hero-alt.png?delay=1200"
+          alt="Abstract resource loading visualization"
+          width="960"
+          height="640"
+        />
+      </section>
+    </main>
+
+    <script src="/assets/js/parser-blocking.js?delay=8000"></script>
+    <script>
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href =
+        'https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap';
+      document.head.appendChild(link);
+    </script>
+  </body>
+</html>
