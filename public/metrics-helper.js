@@ -1,7 +1,7 @@
 (function () {
   const prefix = "[Resource Loading Lab]";
-  window.__resourceLoadingLabHelperVersion = "v2";
-  document.documentElement.dataset.labHelperVersion = "v2";
+  window.__resourceLoadingLabHelperVersion = "v3";
+  document.documentElement.dataset.labHelperVersion = "v3";
 
   function log(label, payload) {
     console.log(prefix, label, payload);
@@ -49,7 +49,13 @@
         transferSize: entry.transferSize
       }));
 
+    const initiatorTypeSummary = resources
+      .filter((entry) => /hero|thumb|font|interaction|metrics-helper/.test(entry.name))
+      .map((entry) => `${entry.name}: ${entry.initiatorType} @ ${entry.start}ms`);
+
+    window.__resourceLoadingLabResourceTiming = resources;
     log("resource timing", resources);
+    log("initiatorType summary", initiatorTypeSummary);
   });
 
   document.addEventListener("click", (event) => {
