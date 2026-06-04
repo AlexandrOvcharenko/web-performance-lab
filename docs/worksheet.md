@@ -104,20 +104,6 @@
 - Чи змінює `preload` порядок hero vs thumbs у Network?
 - Чи `fetchpriority="high"` / `"low"` зменшує конкуренцію під час TTFB?
 
-## 07 Client Rendering
-
-Відкрий:
-
-- `/labs/07-client-rendering/bad.html`
-- `/labs/07-client-rendering/better.html`
-- `/labs/07-client-rendering/best.html`
-
-Питання:
-
-- Чи може browser знайти hero image до виконання `client-render.js`?
-- Що змінюється, коли markup вже є в HTML response?
-- Як `preload` впливає на server-provided critical markup?
-
 ## 08 Over Optimization
 
 Відкрий:

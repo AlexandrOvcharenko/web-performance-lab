@@ -43,12 +43,6 @@
 - `better`: `preload` у head — hero з Initiator `preload`, стартує до thumbs; `Started at` значно раніше за `bad`.
 - `best`: `preload` + `fetchpriority="high"` на hero, `fetchpriority="low"` на thumbs — найраніший старт hero, найменша конкуренція під час TTFB.
 
-## 07 Client Rendering
-
-- `bad`: browser не може request hero image до виконання `client-render.js`, бо image URL не існує в initial HTML.
-- `better`: server-provided `<img>` видно раніше, JS лише додає поведінку.
-- `best`: server-provided markup плюс preload дають найраніший discovery для LCP image.
-
 ## 08 Over Optimization
 
 - `missing-as`: Chrome може показати warning або preload може не бути використаний очікуваним способом.

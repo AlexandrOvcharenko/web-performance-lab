@@ -70,17 +70,6 @@ export const labModules = [
     ]
   },
   {
-    id: "07-client-rendering",
-    title: "Client Rendering",
-    goal: "Порівняти server-provided critical markup і JS-rendered critical content.",
-    focus: "Коли browser може відкрити request для LCP image.",
-    variants: [
-      variant("07-client-rendering", "bad", "bad: client rendered", "Hero markup і image src створюються після JS download/execute."),
-      variant("07-client-rendering", "better", "better: server markup + hydration", "Critical HTML і image присутні одразу, JS лише додає поведінку."),
-      variant("07-client-rendering", "best", "best: server markup + preload", "Critical HTML є в response, LCP image підказаний preload.")
-    ]
-  },
-  {
     id: "08-over-optimization",
     title: "Over Optimization",
     goal: "Показати типові помилки з preload, crossorigin і надмірною пріоритезацією.",

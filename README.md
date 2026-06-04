@@ -37,7 +37,6 @@ npm run dev
 - `04-preload-scanner`: HTML image, CSS background image, JS-injected image, lazy above-the-fold image.
 - `05-resource-hints`: `dns-prefetch`, `preconnect`, `preload`, `prefetch`.
 - `06-fetch-priority`: LCP image priority і thumbnails priority.
-- `07-client-rendering`: client-rendered critical markup проти server-provided markup.
 - `08-over-optimization`: missing `as`, missing `crossorigin`, excessive preload, corrected hints.
 
 ## Навчальний формат коду
